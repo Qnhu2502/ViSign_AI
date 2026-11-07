@@ -1,0 +1,7 @@
+{
+  "tensorflow": "2.21.0",
+  "keras": "3.13.2",
+  "mediapipe": "0.10.32",
+  "scikit_learn": "1.6.1",
+  "numpy": "2.4.6"
+}

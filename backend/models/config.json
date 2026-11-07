@@ -1,0 +1,44 @@
+{
+  "version": "v5_face",
+  "num_classes": 100,
+  "timesteps": 30,
+  "features": 204,
+  "train_samples": 1913,
+  "val_samples": 418,
+  "test_samples": 418,
+  "feature_layout": {
+    "0:63": "tay Left (21 diem x,y,z)",
+    "63:126": "tay Right (21 diem x,y,z)",
+    "126:144": "pose 6 diem (id 11..16) x,y,z",
+    "144:204": "face 20 diem (mat, long may, mieng) x,y,z"
+  },
+  "normalization": "tam = trung diem hai vai, ti le = be rong vai (trung vi theo video); diem thieu = 0; clip [-8, 8]",
+  "handedness": "gan tay theo nhan handedness cua MediaPipe (Left -> khoi 0, Right -> khoi 1)",
+  "scaler": "StandardScaler, mean/std chi tren gia tri co that; diem thieu giu 0 sau chuan hoa",
+  "mediapipe_running_mode": "IMAGE",
+  "frame_sampling": "30 frame trai deu tren so frame thuc te cua video",
+  "labeled_source": "dataset/train/<nhan>/*.mp4 (khong dung private_test/public_test)",
+  "split": "theo nhom video goc trong tung lop, 70/15/15, seed 42",
+  "dropped_train_no_hand": 25,
+  "seed": 42,
+  "test_metrics": {
+    "accuracy": 0.8421052631578947,
+    "accuracy_ci95": [
+      0.8040530863715832,
+      0.8739265154505224
+    ],
+    "top5": 0.9545454545454546,
+    "macro_precision": 0.7548430735930736,
+    "macro_recall": 0.7586428571428572,
+    "macro_f1": 0.7389130539223419,
+    "weighted_f1": 0.8300866895542262,
+    "n_test": 418,
+    "val_accuracy_at_best_epoch": 0.7942583560943604,
+    "best_epoch": 63
+  },
+  "model": {
+    "name": "BiLSTM_Attention_V3",
+    "params": 543077,
+    "epochs_run": 83
+  }
+}

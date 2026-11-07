@@ -1,0 +1,37 @@
+# Environment
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Node / build
+**/node_modules/
+**/dist/
+**/*.tsbuildinfo
+**/.vite/
+
+# Runtime data
+**/logs/
+**/*.log
+**/*.sqlite3
+**/*.db
+
+# Training dataset (~845MB of videos) — too large for git
+/dataset/
+
+# Downloaded MediaPipe models (fetched at runtime)
+**/mp_models/
+
+# Editor / OS / tooling
+.vscode/
+.idea/
+.DS_Store
+**/.claude/
