@@ -2,13 +2,6 @@
 
 Web app nhận diện ký hiệu Việt Nam, backend FastAPI, frontend JavaScript thuần (không cần build). MediaPipe trích tay, thân trên và mặt, BiLSTM + Attention (V5, 100 gloss) nhận diện từng ký hiệu, rồi Groq ghép chuỗi gloss thành câu tiếng Việt. Người dùng bật webcam hoặc tải video MP4 lên. Em đo độ chính xác trên **ký hiệu đơn**; phần ghép nhiều ký hiệu thành câu là baseline, em chưa đo (xem mục "Giới hạn").
 
-![Trang chủ](docs/trang-chu.png)
-
-![Nhận diện webcam](docs/webcam.png)
-
-![Nhận diện video](docs/video.png)
-
-Sơ đồ khối hệ thống: [docs/so-do-khoi.png](docs/so-do-khoi.png). Notebook huấn luyện và báo cáo: `ViSignLanguage_Complete.ipynb`, `bao_cao_visign.md`.
 
 ## 1. Backend
 ```bash
@@ -24,7 +17,7 @@ python run.py
 - Swagger ở http://127.0.0.1:8000/api/docs, còn `GET /api/status` cho biết model, MediaPipe, Groq và SQLite đang ra sao.
 
 ## 2. Frontend
-Không có bước build. FastAPI phục vụ luôn thư mục `frontend/` nên chỉ cần mở **http://127.0.0.1:8000**.
+ FastAPI phục vụ luôn thư mục `frontend/` nên chỉ cần mở **http://127.0.0.1:8000**.
 - Camera chỉ mở được trên `localhost`/`127.0.0.1` hoặc HTTPS. Khi demo anh dùng `http://127.0.0.1:8000`, đừng dùng địa chỉ IP trong mạng nội bộ bằng HTTP.
 - Webcam dùng WebSocket nên cần `uvicorn[standard]` (đã nằm trong `requirements.txt`). Báo "mất kết nối" thường là do thiếu gói này.
 - Giao diện đã kiểm tra ở độ rộng 1280 và 390 px (không tràn ngang).
