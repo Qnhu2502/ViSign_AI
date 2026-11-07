@@ -1,7 +1,3 @@
-# Environment
-.env
-.env.*
-!.env.example
 
 # Python
 __pycache__/
@@ -15,15 +11,6 @@ env/
 .ruff_cache/
 .coverage
 htmlcov/
-
-# Runtime data
-logs/
-*.log
-*.sqlite3
-*.db
-
-# Downloaded MediaPipe models (fetched at runtime)
-mp_models/
 
 # Editor / OS / tooling
 .vscode/
